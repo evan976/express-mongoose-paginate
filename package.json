@@ -1,0 +1,33 @@
+{
+  "name": "express-mongoose-paginate",
+  "version": "1.0.0",
+  "description": "🆒 A typescript pagination plugin for express mongoose",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "publish": "tsc && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wujihua118/express-mongoose-paginate.git"
+  },
+  "keywords": [
+    "mongoose",
+    "pagination",
+    "typescript"
+  ],
+  "author": {
+    "name": "Evan",
+    "email": "wjh50940@163.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wujihua118/express-mongoose-paginate/issues"
+  },
+  "homepage": "https://github.com/wujihua118/express-mongoose-paginate#readme",
+  "directories": {
+    "lib": "src"
+  }
+}
