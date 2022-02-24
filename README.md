@@ -1,2 +1,3 @@
 # express-mongoose-paginate
-🆒 A typescript pagination plugin for express mongoose
+
+Typescript pagination plugin for express mongoose

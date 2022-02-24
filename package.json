@@ -29,5 +29,14 @@
   "homepage": "https://github.com/wujihua118/express-mongoose-paginate#readme",
   "directories": {
     "lib": "src"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "mongoose": "^6.2.3",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.178",
+    "eslint": "^8.9.0"
   }
 }
