@@ -1,6 +1,6 @@
 {
   "name": "express-mongoose-paginate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🆒 A typescript pagination plugin for express mongoose",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
