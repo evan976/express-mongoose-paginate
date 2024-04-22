@@ -1,4 +1,4 @@
-import merge from 'lodash/merge'
+import merge from 'lodash.merge'
 import type {
   Model,
   Document,
@@ -15,7 +15,7 @@ export interface PaginationResult<T> {
   totalPage: number
 }
 
-export type PaginationQuery<T = any> = FilterQuery<T>
+export type PaginationQuery<T = unknown> = FilterQuery<T>
 
 export interface PaginationOptions {
   page?: number
@@ -48,22 +48,28 @@ export function mongoosePagination<T extends Document>(schema: Schema<T>) {
     filterQuery: PaginationQuery<T>,
     options: PaginationOptions
   ): Promise<PaginationResult<T>> {
-    const { page, pageSize, sort, lean, projection, $queryOptions, ...rest } =
-      merge({ ...defaultOptions }, { ...options })
+    const {
+      page,
+      pageSize,
+      sort,
+      lean,
+      projection,
+      $queryOptions,
+      ...rest
+    } = merge({...defaultOptions }, { ...options })
 
     const findQueryOptions = {
       ...rest,
       ...$queryOptions
     }
 
-    const countQuery = this.countDocuments
-      ? this.countDocuments(filterQuery).exec()
-      : this.count(filterQuery).exec()
+    const countQuery = this.countDocuments(filterQuery).exec()
 
     const pageQuery = this.find(filterQuery, projection, {
       skip: (page - 1) * pageSize,
       limit: pageSize,
       sort: sort ? { _id: sort } : findQueryOptions.sort,
+      lean,
       ...findQueryOptions
     }).exec()
 
